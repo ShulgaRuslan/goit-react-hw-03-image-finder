@@ -45,10 +45,10 @@ export class App extends Component {
 
   toggleModal = image => {
     if (image) {
-      this.setState({ isModalOpen: true, modalImage: image });
+      this.setState({ modalImage: image });
       return;
     }
-    this.setState({ isModalOpen: false, modalImage: '' });
+    this.setState({  modalImage: '' });
   };
 
   render() {
@@ -65,7 +65,7 @@ export class App extends Component {
           !this.state.isLoding && (
             <Button handleLoadMore={this.handleLoadMore} />
           )}
-        {this.state.isModalOpen && (
+        {this.state.modalImage && (
           <Modal
             modalImage={this.state.modalImage}
             toggleModal={this.toggleModal}
